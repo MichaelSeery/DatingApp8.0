@@ -1,4 +1,4 @@
-﻿﻿using System.Security.Claims;
+﻿﻿﻿using System.Security.Claims;
 using API.Dtos;
 using API.Entities;
 using API.Extensions;
@@ -61,6 +61,8 @@ public class UsersController(IUserRepository userRepository, IMapper mapper,
             Url = result.SecureUrl.AbsoluteUri,
             PublicId = result.PublicId
         };
+
+        if (user.Photos.Count == 0) photo.IsMain = true;
 
         user.Photos.Add(photo);
 
