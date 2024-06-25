@@ -19,10 +19,7 @@ public class AppUser
     public required string City { get; set; }
     public required string Country { get; set; }
     public List<Photo> Photos { get; set; } = [];
+    public List<UserLike> LikedByUsers { get; set; } = [];
+    public List<UserLike> LikedUsers { get; set; } = [];
 
-    // Use the AutoMapper profiles to calculate this
-    // public int GetAge() 
-    // {
-    //     return DateOfBirth.CalculateAge();
-    // }
 }
