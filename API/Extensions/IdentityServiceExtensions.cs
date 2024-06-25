@@ -1,4 +1,4 @@
-﻿using System.Text;
+﻿﻿using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -21,7 +21,7 @@ public static class IdentityServiceExtensions
                     ValidateAudience = false
                 };
             });
-
+        
         return services;
     }
 }

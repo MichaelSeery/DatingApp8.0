@@ -10,6 +10,7 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(req).pipe(
     catchError(error => {
+      console.log("Interceptor Error: " + error.error);
       if (error) {
         switch (error.status) {
           case 400:
