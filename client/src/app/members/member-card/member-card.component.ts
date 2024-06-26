@@ -10,7 +10,6 @@ import { LikesService } from '../../_services/likes.service';
   templateUrl: './member-card.component.html',
   styleUrl: './member-card.component.css'
 })
-
 export class MemberCardComponent {
   private likeService = inject(LikesService);
   member = input.required<Member>();
