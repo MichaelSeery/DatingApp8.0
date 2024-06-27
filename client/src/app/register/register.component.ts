@@ -55,7 +55,15 @@ export class RegisterComponent implements OnInit {
     this.registerForm.patchValue({dateOfBirth: dob});
     this.accountService.register(this.registerForm.value).subscribe({
       next: _ => this.router.navigateByUrl('/members') ,
-      error: error => this.validationErrors = error
+      error: error => {
+          // this.validationErrors?.push(error);
+         console.log('Before isArray: ' + error );
+        if (Array.isArray(error)) {
+          // console.log('After isArray: ' + error);
+          this.validationErrors = error
+          // console.log('Validation Errors: ' + this.validationErrors);
+        }
+      }
     })
   }
 
